@@ -1,0 +1,47 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@model PRAS.Models.ViewModels.New.NewViewModel
+
+<form asp-action="CreateOrEdit" enctype="multipart/form-data" asp-controller="Admin" method="post">
+    @if (Model.Id > 0)
+    {
+        <h2>@Localizer["EditTitle"]</h2>
+    }
+    else
+    {
+        <h2>@Localizer["AddTitle"]</h2>
+    }
+    <div class="form-group">
+        <label asp-for="Name"></label><br />
+        <input type="text" asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description"></label><br />
+        <input type="text" asp-for="Description" class="form-control" />
+        <span asp-validation-for="Description"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ImagePath"></label>
+        <div class="custom-file">
+            <input asp-for="ImageFile" class="custom-file-input" />
+            <label asp-for="ImageFile" class="custom-file-label"></label>
+        </div>
+        <span asp-validation-for="ImageFile"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Text"></label><br />
+        <textarea asp-for="Text" class="form-control"></textarea>
+        <span asp-validation-for="Text"></span>
+    </div>
+    <div class="form-group">
+        @if (Model.Id > 0)
+        {
+            <button type="submit" class="btn btn-primary">@Localizer["EditSubmit"]</button>
+        }
+        else
+        {
+            <button type="submit" class="btn btn-primary">@Localizer["AddSubmit"]</button>
+        }        
+    </div>
+</form>

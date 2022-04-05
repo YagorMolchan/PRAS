@@ -1,0 +1,25 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using PRAS.Models.ViewModels
+@inject IViewLocalizer Localizer
+@model IEnumerable<PRAS.Models.Entities.New>
+
+<div class="container">
+    <h2>@Localizer["Title"]</h2>
+    <div class="new-list">
+        @foreach (var item in Model)
+        {
+            <div class="new-title-content">
+                <div class="new-image">
+                    <img src="~/img/@item.ImagePath" height="140" width="200" />
+                </div>
+                <div class="new-text">
+                    <a asp-action="GetNew" asp-controller="Home" asp-route-id="@item.Id">
+                        <h4>@item.Name</h4>
+                    </a>
+                    <p>@item.Description</p>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
