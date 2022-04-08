@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using PRAS.Models.ViewModels.Account;
+using Microsoft.Extensions.Localization;
 
 namespace PRAS.Controllers
 {
@@ -13,11 +14,13 @@ namespace PRAS.Controllers
     {
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly IStringLocalizer<AccountController> _localizer;
 
-        public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
+        public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, IStringLocalizer<AccountController> localizer)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _localizer = localizer;
         }
 
         [HttpGet]
@@ -72,7 +75,7 @@ namespace PRAS.Controllers
                 }
                 else
                 {
-                    
+                    ModelState.AddModelError("", _localizer["LoginError"]);
                 }
             }
             return View(model);

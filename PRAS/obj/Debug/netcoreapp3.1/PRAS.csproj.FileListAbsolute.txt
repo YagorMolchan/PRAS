@@ -212,3 +212,6 @@ C:\Users\molch\source\repos\PRAS\PRAS\obj\Debug\netcoreapp3.1\PRAS.Resources.Mod
 C:\Users\molch\source\repos\PRAS\PRAS\obj\Debug\netcoreapp3.1\PRAS.Resources.Views.Admin.CreateOrEdit.be.resources
 C:\Users\molch\source\repos\PRAS\PRAS\obj\Debug\netcoreapp3.1\PRAS.Resources.Views.Admin.CreateOrEdit.en.resources
 C:\Users\molch\source\repos\PRAS\PRAS\obj\Debug\netcoreapp3.1\PRAS.Resources.Views.Admin.CreateOrEdit.ru.resources
+C:\Users\molch\source\repos\PRAS\PRAS\obj\Debug\netcoreapp3.1\PRAS.Resources.Controllers.AccountController.be.resources
+C:\Users\molch\source\repos\PRAS\PRAS\obj\Debug\netcoreapp3.1\PRAS.Resources.Controllers.AccountController.en.resources
+C:\Users\molch\source\repos\PRAS\PRAS\obj\Debug\netcoreapp3.1\PRAS.Resources.Controllers.AccountController.ru.resources
